@@ -1,0 +1,30 @@
+{
+  "name": "simplify-dag",
+  "version": "0.0.0",
+  "description": "given a directed acyclic graph, contract straight-line runs to single vertices",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chrisdickinson/contract-graph-edges.git"
+  },
+  "keywords": [
+    "graph-theory",
+    "graph",
+    "contract",
+    "edges",
+    "simplify"
+  ],
+  "author": "Chris Dickinson <chris@neversaw.us> (http://neversaw.us/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisdickinson/contract-graph-edges/issues"
+  },
+  "homepage": "https://github.com/chrisdickinson/contract-graph-edges",
+  "devDependencies": {
+    "digraph-tag": "^1.0.0",
+    "tape": "^4.0.0"
+  }
+}
