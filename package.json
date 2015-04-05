@@ -1,6 +1,6 @@
 {
   "name": "simplify-dag",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "given a directed acyclic graph, contract straight-line runs to single vertices",
   "main": "index.js",
   "scripts": {
