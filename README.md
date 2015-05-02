@@ -58,17 +58,20 @@ you should provide instructions to this module on how to treat these types.
 `DerivedVertex` instances represent straight-line runs of `Vertex` instances from the original
 graph. This module will *only* produce `DerivedVertex` instances.
 
-##### `{copyEdge: Function?, getFrom: Function?, getTo: Function?}? → Interface`
+##### `{copyEdge: Function?, {s,g}et{From,To}: Function?}? → Interface`
 
 An `Interface` is defined as an object that optionally defines `copyEdge`, `getFrom`, and
 `getTo` properties. 
 
-* `copyEdge` takes the original `Edge` object, and new "source" and
-"edge" `DerivedVertex` instances. If not defined it will create `[newSource, newDest]` array instances.
+* `copyEdge` takes the original `Edge` object, and should return a new copy of it.
 * `getFrom` takes an `Edge` and returns the source of the edge. If not defined it will treat
 edges as 2-element arrays, and attempt to take the first element as the source.
 * `getTo` takes an `Edge` and returns the destination of the edge. As above, if not defined
 it will treat edges as a 2-element array and return the second element as the destination.
+* `setFrom` takes an `Edge` and a `Vertex` and should mutate the `Edge` such
+that it originates from the vertex.
+* `setTo` takes an `Edge` and a `Vertex` and should mutate the `Edge` such
+that it terminates in the vertex.
 
 ##### `simplify(vertices: Set<Vertex>, incoming: Edges, `
 ##### `         outgoing: Edges, interface: Interface) → Graph`
