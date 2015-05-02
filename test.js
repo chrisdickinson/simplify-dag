@@ -65,3 +65,29 @@ test('complex works', function(assert) {
 
   assert.end()
 })
+
+test('cycle works', function(assert) {
+  /*
+      A
+     / \
+    D   B
+     \ /
+      C
+      |
+      X
+  */
+  const graph = digraph`
+    A -> B
+    B -> C
+    C -> D
+    D -> A
+    C -> X
+  `
+  const results = simplify(graph.vertices, graph.incoming, graph.outgoing)
+
+  assert.equal(results.vertices.size, 2)
+  assert.equal(results.outgoing.size, 1)
+  assert.equal(results.incoming.size, 2)
+
+  assert.end()
+})
